@@ -1,4 +1,4 @@
-document.getElementById('menu-toggle').addEventListener('click', function() {
+document.getElementById('menu-toggle').addEventListener('click', function () {
     document.querySelector('.nav-links').classList.toggle('active');
 });
 let tasks = [];
@@ -9,7 +9,7 @@ const loadData = () => {
 
     document.getElementById('loading').style.display = 'block';
 
-    xhr.onload = function() {
+    xhr.onload = function () {
         if (this.status === 200) {
             tasks = JSON.parse(this.responseText);
             document.getElementById('loading').style.display = 'none';
@@ -20,17 +20,19 @@ const loadData = () => {
         }
     };
 
-    xhr.onerror = function() {
+    xhr.onerror = function () {
         document.getElementById('loading').style.display = 'none';
         document.getElementById('error').style.display = 'block';
+
     };
 
     xhr.send();
 };
 
 const displayData = (tasks) => {
+    document.getElementById('todo-table').style.display = 'block';
     const tableBody = document.getElementById('task-list');
-    tableBody.innerHTML = ''; 
+    tableBody.innerHTML = '';
 
     tasks.forEach((task, index) => {
         const row = document.createElement('tr');
@@ -50,14 +52,14 @@ const displayData = (tasks) => {
 };
 
 function deleteTask(index) {
-    tasks.splice(index, 1); 
+    tasks.splice(index, 1);
     displayData(tasks);
     console.log(`Task at index ${index} deleted.`);
 }
 
 function markAsDone(index) {
     tasks[index].done = true;
-    displayData(tasks); 
+    displayData(tasks);
     console.log(`Task at index ${index} marked as done.`);
 }
 
