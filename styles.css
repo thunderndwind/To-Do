@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("../To-Do/images/paper.gif");
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #333;
+    padding: 0 20px;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+nav div{
+    display: flex;
+}
+
+nav div a {
+    display: flex;
+}
+
+
+
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end ;
+    align-items: center;
+}
+
+nav li{
+    height: 50px;
+}
+
+nav ul a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav ul a:hover{
+    background-color: blanchedalmond;
+}
+
+nav li:first-child{
+    margin-right: auto;
+    
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 200px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,33 @@
+[
+    {
+      "name": "Buy groceries",
+      "description": "Get milk, bread, eggs, and vegetables",
+      "time": "2024-09-10 10:00",
+      "done": false
+    },
+    {
+      "name": "Finish project report",
+      "description": "Complete the final draft of the project report",
+      "time": "2024-09-11 15:00",
+      "done": false
+    },
+    {
+      "name": "Exercise",
+      "description": "Go for a 30-minute run in the park",
+      "time": "2024-09-08 07:00",
+      "done": true
+    },
+    {
+      "name": "Call John",
+      "description": "Discuss the upcoming meeting with John",
+      "time": "2024-09-08 18:00",
+      "done": false
+    },
+    {
+      "name": "Pay electricity bill",
+      "description": "Make an online payment for the electricity bill",
+      "time": "2024-09-09 09:00",
+      "done": false
+    }
+  ]
+  
