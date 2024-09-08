@@ -1,93 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+    --main-color: rgb(123, 101, 29);
+    --secondary-color: #e6d5ae;
+    --button-color: #4CAF50;
+    --button-hover-color: #45a049;
+    --text-color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url("../To-Do/images/paper.gif");
     background-repeat: repeat;
+    background-size: initial;
+    background-position: center;
     background-attachment: fixed;
+    color: var(--text-color);
 }
+
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 60px;
-    background-color: #333;
+    background-color: var(--main-color);
+    box-shadow: 3px 3px 5px rgba(90, 73, 19, 0.3);
     padding: 0 20px;
 }
 
-.logo a {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
+.logo img {
+    height: 40px;
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
 .nav-links {
+    list-style-type: none;
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
 }
 
-.menu-toggle {
-    display: none;
-}
-
-
-nav div{
-    display: flex;
-}
-
-nav div a {
-    display: flex;
-}
-
-
-
-
-nav ul{
-    width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end ;
-    align-items: center;
-}
-
-nav li{
-    height: 50px;
-}
-
-nav ul a{
-    height: 100%;
-    padding: 0 30px;
+.nav-links a {
+    color: var(--text-color);
     text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.task-form {
+    background-color: var(--secondary-color);
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    color: black;
 }
 
-nav ul a:hover{
-    background-color: blanchedalmond;
+.task-form input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    width: 60%;
 }
 
-nav li:first-child{
-    margin-right: auto;
-    
+textarea {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    width: 60%;
+    height: 100px;
+    resize: vertical;
+    box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
+
+#add-task-btn {
+    margin-top: 10px;
+}
+
+table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: var(--secondary-color);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    padding: 12px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+table td {
+    padding: 10px 15px;
+    text-align: center;
+    border-bottom: 1px solid var(--main-color);
+}
+
+table tr:hover {
+    background-color: rgba(123, 101, 29, 0.1);
+}
+
+#todo-table {
+    margin: 20px auto;
+    width: 60%;
+}
+
+@media screen and (max-width: 768px) {
+    .task-form {
+        width: 90%;
+    }
+
+    #todo-table {
+        width: 100%;
+    }
+
+    table th,
+    table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
     .nav-links {
-        display: none;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #333;
-        width: 200px;
+        display: none;
+        width: 100%;
+        background-color: var(--main-color);
     }
 
     .nav-links.active {
@@ -96,9 +156,19 @@ nav li:first-child{
 
     .menu-toggle {
         display: block;
-        font-size: 30px;
-        background: none;
-        border: none;
-        cursor: pointer;
     }
+}
+
+button {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
 }
